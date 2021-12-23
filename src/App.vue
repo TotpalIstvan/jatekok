@@ -1,5 +1,5 @@
 <template>
-  
+ <div id="app" >
   <table border="1">
     <thead>
       <tr>
@@ -30,6 +30,9 @@
     </tr>
     </tbody>
   </table>
+      <button>Hozzáadás</button><br>
+      <button>Törlés</button>
+</div>
 </template>
 
 <script>
