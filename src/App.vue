@@ -7,6 +7,7 @@
       <th>Kiadási év</th>
       <th>Kiadó</th>
       <th>Free-to-play?</th>
+       
       </tr>
     </thead>
     <tbody>
@@ -15,23 +16,26 @@
       <td>2021</td>
       <td>Ubisoft</td>
       <td>nem</td>
+      <td><button>Törlés</button></td>
     </tr>
     <tr>
       <td>World of Tanks</td>
       <td>2010</td>
       <td>Wargaming</td>
       <td>igen</td>
+      <td><button>Törlés</button></td>
     </tr>
     <tr>
       <td>Simcity</td>
       <td>2013</td>
       <td>Electronic Arts</td>
       <td>nem</td>
+      <td><button>Törlés</button></td>
     </tr>
     </tbody>
   </table>
       <button>Hozzáadás</button><br>
-      <button>Törlés</button>
+     
 </div>
 </template>
 
@@ -70,7 +74,10 @@ export default {
             }
         ]
       }
-  }
+  },
+  methods: {
+
+   }
 }
 </script>
 
