@@ -36,12 +36,14 @@
 </template>
 
 <script>
-
+//import Tablazat from './components/Tablazat.vue'
+//import Sor from './components/Sor.vue'
 
 export default {
   name: 'App',
   components: {
-    
+    //Tablazat,
+    //Sor
   },
   data() {
       return {
