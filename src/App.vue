@@ -22,7 +22,7 @@
     
     </tbody>
   </table>
-      <button>Hozzáadás</button><br>
+      <button @click="Hozzaad">Hozzáadás</button><br>
      
 </div>
 </template>
@@ -80,6 +80,7 @@ export default {
       }
   },
   methods: {
+
         Torles(nev) {
             this.rows = this.rows.filter(function (item) {
               return item.nev != nev
@@ -97,6 +98,29 @@ export default {
               return {...szerkesztett.new}
             })
             this.szerkesztett.old.nev = ''
+        },
+
+        Hozzaad(row) {
+          var letezik = false
+          this.rows.forEach(function(item) {
+            if (item.nev == row.nev) {
+              letezik = true
+            }
+          })
+
+          if (!letezik) {
+            this.rows.push({...row})
+          } 
+         
+         
+          else{
+            this.rows = this.rows.map(function (item) {
+              if(item.nev != row.nev) {
+                return item
+              }
+              return row
+            })
+          }
         }
    }
    

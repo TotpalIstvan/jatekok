@@ -4,8 +4,10 @@
         <td v-if="!szerkeszt">{{ row.kiadasi_ev }}</td>
         <td v-if="!szerkeszt">{{ row.kiado }}</td>
         <td v-if="!szerkeszt">{{ row.free_to_play }}</td>
-        <td v-if="!szerkeszt"><button @click="Torles">Törlés</button></td>
-        <td v-if="!szerkeszt"><button @click="Szerkesztes">Szerkesztés</button></td>
+        <td v-if="!szerkeszt">
+        <button @click="Torles">Törlés</button>
+        <button @click="Szerkesztes">Szerkesztés</button>
+        </td>
         <td v-if="szerkeszt"><input type="text" v-model="ujSor.nev"></td>
         <td v-if="szerkeszt"><input type="number" v-model="ujSor.kiadasi_ev"></td>
         <td v-if="szerkeszt"><input type="text" v-model="ujSor.kiado"></td>
