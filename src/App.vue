@@ -17,7 +17,9 @@
     v-bind:key="row.nev"
     :row="row"
     @torles = "Torles"
+     @mentes = "Mentes"
     />
+    
     </tbody>
   </table>
       <button>Hozzáadás</button><br>
@@ -37,26 +39,42 @@ export default {
   },
   data() {
       return {
+        szerkesztett: {
+          old: {
+            nev: '',
+            kiadasi_ev: null,
+            kiado: '',
+            free_to_play: ''
+          },
+
+          new: {
+            nev: '',
+            kiadasi_ev: null,
+            kiado: '',
+            free_to_play: ''
+          }
+        },
         rows: [
             {
               nev: 'Far Cry 6',
               kiadasi_ev: 2021,
               kiado: 'Ubisoft',
-              free_to_play: false
+              free_to_play: 'nem'
             },
 
             {
               nev: 'World of Tanks',
               kiadasi_ev: 2010,
               kiado: 'Wargaming',
-              free_to_play: true
+              free_to_play: 'igen'
             },
 
             {
               nev: 'Simcity',
               kiadasi_ev: 2013,
               kiado: 'Electronic Arts',
-              free_to_play: false
+              free_to_play: 'nem'
+              
             }
         ]
       }
@@ -66,8 +84,22 @@ export default {
             this.rows = this.rows.filter(function (item) {
               return item.nev != nev
             })
+        }, 
+        Szerkeszt(szerkesztett) {
+            this.szerkesztett.old = {...szerkesztett}
+            this.szerkesztett.new = {...szerkesztett}
+        }, 
+        Mentes(szerkesztett) {
+            this.rows = this.rows.map(function (item) {
+              if (item.nev != szerkesztett.old.nev) {
+                return item;
+              }
+              return {...szerkesztett.new}
+            })
+            this.szerkesztett.old.nev = ''
         }
    }
+   
 }
 </script>
 

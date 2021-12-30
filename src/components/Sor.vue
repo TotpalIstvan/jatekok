@@ -1,11 +1,17 @@
 <template>
     <tr>
-        <td>{{ row.nev }}</td>
-        <td>{{ row.kiadasi_ev }}</td>
-        <td>{{ row.kiado }}</td>
-        <td>{{ row.free_to_play }}</td>
-        <td><button @click="Torles()">Törlés</button></td>
-        <td><button @click="Szerkesztes()">Szerkesztés</button></td>
+        <td v-if="!szerkeszt">{{ row.nev }}</td>
+        <td v-if="!szerkeszt">{{ row.kiadasi_ev }}</td>
+        <td v-if="!szerkeszt">{{ row.kiado }}</td>
+        <td v-if="!szerkeszt">{{ row.free_to_play }}</td>
+        <td v-if="!szerkeszt"><button @click="Torles">Törlés</button></td>
+        <td v-if="!szerkeszt"><button @click="Szerkesztes">Szerkesztés</button></td>
+        <td v-if="szerkeszt"><input type="text" v-model="ujSor.nev"></td>
+        <td v-if="szerkeszt"><input type="number" v-model="ujSor.kiadasi_ev"></td>
+        <td v-if="szerkeszt"><input type="text" v-model="ujSor.kiado"></td>
+        <td v-if="szerkeszt"><input type="text" v-model="ujSor.free_to_play"></td>
+        <td v-if="szerkeszt"><button @click="Nyomas">{{ gomb }}</button></td>
+
     </tr>
     
 </template>
@@ -25,7 +31,7 @@ export default {
             }
     },
     methods: {
-            Nyomas() {
+             Nyomas() {
                 if(this.row == null) {
                     this.$emit('hozzaad', {...this.ujSor})
                 }   else{
@@ -47,6 +53,9 @@ export default {
     computed: {
         szerkeszt() {
             return this.row == null || this.editing
+        },
+        gomb() {
+            return this.row == null ? 'Szerkesztés' : 'Mentés'
         }
     }
 }
