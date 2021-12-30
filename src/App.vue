@@ -11,27 +11,13 @@
       </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Far Cry 6</td>
-      <td>2021</td>
-      <td>Ubisoft</td>
-      <td>nem</td>
-      
-    </tr>
-    <tr>
-      <td>World of Tanks</td>
-      <td>2010</td>
-      <td>Wargaming</td>
-      <td>igen</td>
-      
-    </tr>
-    <tr>
-      <td>Simcity</td>
-      <td>2013</td>
-      <td>Electronic Arts</td>
-      <td>nem</td>
-      
-    </tr>
+    
+    <Sor 
+    v-for="row in rows"
+    v-bind:key="row.nev"
+    :row="row"
+    @torles = "Torles"
+    />
     </tbody>
   </table>
       <button>Hozzáadás</button><br>
@@ -41,13 +27,13 @@
 
 <script>
 //import Tablazat from './components/Tablazat.vue'
-//import Sor from './components/Sor.vue'
+import Sor from './components/Sor.vue'
 
 export default {
   name: 'App',
   components: {
     //Tablazat,
-    //Sor
+    Sor
   },
   data() {
       return {
@@ -76,7 +62,11 @@ export default {
       }
   },
   methods: {
-
+        Torles(nev) {
+            this.rows = this.rows.filter(function (item) {
+              return item.nev != nev
+            })
+        }
    }
 }
 </script>

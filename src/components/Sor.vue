@@ -20,7 +20,7 @@ export default {
                     nev: this.row == null ? '' : this.row.nev,
                     kiadasi_ev: this.row == null ? '' : this.row.kiadasi_ev,
                     kiado: this.row == null ? '' : this.row.kiado,
-                    free_to_play: this.row == null ? '' : this.row.free_to_play,
+                    free_to_play: this.row == null ? '' : this.row.free_to_play
                 }
             }
     },
