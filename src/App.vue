@@ -14,7 +14,7 @@
     
     <Sor 
     v-for="row in rows"
-    v-bind:key="row.nev"
+    :key="row.nev"
     :row="row"
     @torles = "Torles"
      @mentes = "Mentes"
