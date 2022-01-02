@@ -19,7 +19,7 @@
     @torles = "Torles"
      @mentes = "Mentes"
     />
-    
+    <label></label>
     </tbody>
   </table>
   <label></label>
