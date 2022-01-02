@@ -22,13 +22,14 @@
     
     </tbody>
   </table>
+  <label></label>
       <button @click="Hozzaad">Hozzáadás</button><br>
      
 </div>
 </template>
 
 <script>
-//import Tablazat from './components/Tablazat.vue'
+
 import Sor from './components/Sor.vue'
 
 export default {
