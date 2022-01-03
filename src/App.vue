@@ -17,7 +17,7 @@
     :key="row.nev"
     :row="row"
     @torles = "Torles"
-     @mentes = "Mentes"
+    @mentes = "Mentes"
     />
     <label></label>
     </tbody>
@@ -30,13 +30,13 @@
 
 <script>
 
-import Sor from './components/Sor.vue'
+import Tablazat from './components/Tablazat.vue'
 
 export default {
   name: 'App',
   components: {
-    //Tablazat,
-    Sor
+    Tablazat
+    
   },
   data() {
       return {
