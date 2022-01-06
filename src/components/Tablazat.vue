@@ -19,7 +19,9 @@
     @torles = "Torles"
     @szerkeszt = "Szerkeszt"
     />
-    <label></label>
+
+    
+    
     </tbody>
   </table>
   <label class="frpLbl"> Free-to play </label><br>
