@@ -22,7 +22,7 @@
     <label></label>
     </tbody>
   </table>
-  <label></label>
+  <label class="frpLbl"> Free-to play </label><br>
       <button @click="Hozzaad">Hozzáadás</button><br>
       </div>
 </template>
@@ -122,3 +122,9 @@ export default {
    
 }
 </script>
+
+<style>
+.frpLbl {
+  float: left;
+}
+</style>

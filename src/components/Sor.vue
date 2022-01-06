@@ -1,4 +1,5 @@
 <template>
+
     <tr>
         <td v-if="!szerkeszt">{{ row.nev }}</td>
         <td v-if="!szerkeszt">{{ row.kiadasi_ev }}</td>
@@ -14,8 +15,10 @@
         <td v-if="szerkeszt"><input type="text" v-model="ujSor.free_to_play"></td>
         <td v-if="szerkeszt"><button>{{ gomb }}</button></td>
 
+        
     </tr>
     
+
 </template>
 
 <script>
