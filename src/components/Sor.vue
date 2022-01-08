@@ -13,12 +13,9 @@
         <td v-if="szerkeszt"><input type="number" v-model="ujSor.kiadasi_ev"></td>
         <td v-if="szerkeszt"><input type="text" v-model="ujSor.kiado"></td>
         <td v-if="szerkeszt "><input type="text" v-model="ujSor.free_to_play"></td>
-        <td v-if="szerkeszt"><button>{{ gomb }}</button></td>
+        <td v-if="szerkeszt"><button @click="Nyomas">{{ gomb }}</button></td>
         
-        <td v-if="Hozzaad"><input type="text" v-model="nev"></td>
-        <td v-if="Hozzaad"><input type="number" v-model="kiadasi_ev"></td>
-        <td v-if="Hozzaad"><input type="text" v-model="kiado"></td>
-        <td v-if="Hozzaad"><input type="text" v-model="free_to_play"></td>
+        
     </tr>
     
 
@@ -39,43 +36,34 @@ export default {
             }
     },
     methods: {
+
+      Nyomas() {
+          if (this.row == null) {
+                this.$emit('hozzadas', {...this.ujSor})            
+            } else {
+                this.$emit('mentes', {
+                    old: {...this.row},
+                    new: {...this.ujSor}
+                })
+                this.editing = false
+            }
+      },
              
             Szerkesztes() {
                     this.editing = true
                 },
             Torles() {
                 this.$emit('torles', this.row.nev)
-            },
-             Hozzaad(row) {
-          var letezik = false
-          this.rows.forEach(function(item) {
-            if (item.nev == row.nev) {
-              letezik = true
             }
-          })
-          if (!letezik) {
-            this.rows.push({...row})
-          } 
-         
-         
-          else{
-            this.rows = this.rows.map(function (item) {
-              if(item.nev != row.nev) {
-                return item
-              }
-              return row
-            })
-          }
-        }
-        
     }, 
     computed: {
         szerkeszt() {
             return this.row == null || this.editing
         },
         gomb() {
-            return this.row == null ? 'Szerkesztés' : 'Mentés'
+            return this.row == null ? 'Hozzáadás' : 'Mentés'
         }
+       
     }
 }
 </script>

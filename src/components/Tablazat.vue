@@ -19,13 +19,14 @@
     @torles = "Torles"
     @szerkeszt = "Szerkeszt"
     />
-
+<Sor 
+@hozzadas = "Hozzaad"
+/>
     
     
     </tbody>
   </table>
-  <label class="frpLbl"> Free-to play </label><br>
-      <button @click="Hozzaad">Hozzáadás</button><br>
+
       </div>
 </template>
 
@@ -45,13 +46,13 @@ export default {
             nev: '',
             kiadasi_ev: null,
             kiado: '',
-            free_to_play: ''
+            free_to_play: false
           },
           new: {
             nev: '',
             kiadasi_ev: null,
             kiado: '',
-            free_to_play: ''
+            free_to_play: false
           }
         },
         rows: [
@@ -59,21 +60,21 @@ export default {
               nev: 'Far Cry 6',
               kiadasi_ev: 2021,
               kiado: 'Ubisoft',
-              free_to_play: 'nem'
+              free_to_play: false
             },
 
             {
               nev: 'World of Tanks',
               kiadasi_ev: 2010,
               kiado: 'Wargaming',
-              free_to_play: 'igen'
+              free_to_play: true
             },
 
             {
               nev: 'Simcity',
               kiadasi_ev: 2013,
               kiado: 'Electronic Arts',
-              free_to_play: 'nem'
+              free_to_play: false
               
             }
         ]
@@ -120,16 +121,13 @@ export default {
             })
           }
         }
-   },
-  computed: {
-      
-  } 
+   }
+    
+  
 }
 
 </script>
 
 <style>
-.frpLbl {
-  float: left;
-}
+
 </style>
